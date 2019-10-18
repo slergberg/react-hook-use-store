@@ -1,7 +1,7 @@
 # Contributing
 
 We are open to, and grateful for, any contributions made by the community. By
-contributing to React Redux, you agree to abide by the
+contributing to this library, you agree to abide by the
 [code of conduct](https://github.com/slergberg/react-hook-use-store/blob/master/CODE_OF_CONDUCT.md).
 
 ## Reporting Issues and Asking Questions
