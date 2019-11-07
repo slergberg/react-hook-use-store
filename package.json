@@ -1,6 +1,6 @@
 {
   "name": "@slergberg/react-hook-use-store",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Highly opinionated and simple store builder for React",
   "keywords": [
     "context",
