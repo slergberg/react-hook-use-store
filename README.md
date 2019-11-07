@@ -9,7 +9,7 @@ Highly opinionated and simple store builder for React.
 ## Installation
 
 ```JavaScript
-npm install --save react-hook-use-store
+npm install --save @slergberg/react-hook-use-store
 ```
 
 This assumes that you’re using npm package manager with a module bundler like
