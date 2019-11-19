@@ -7,14 +7,14 @@ contributing to this library, you agree to abide by the
 ## Reporting Issues and Asking Questions
 
 Before opening an issue, please search the
-[issue tracker](https://github.com/slergberg/react-hook-use-store/issues)
-to make sure your issue hasn't already been reported.
+[issue tracker](https://github.com/slergberg/react-hook-use-store/issues) to
+make sure your issue hasn't already been reported.
 
 ## Development
 
 Visit the
-[issue tracker](https://github.com/slergberg/react-hook-use-store/issues)
-to find a list of open issues that need attention.
+[issue tracker](https://github.com/slergberg/react-hook-use-store/issues) to
+find a list of open issues that need attention.
 
 Fork, then clone the repo:
 
@@ -55,13 +55,13 @@ npm run test
 To check the tests coverage, run the following:
 
 ```
-npm test -- --coverage
+npm run test -- --coverage
 ```
 
 To continuously watch and run tests, run the following:
 
 ```
-npm test -- --coverage --watch
+npm run test -- --coverage --watch
 ```
 
 To perform linting with `eslint`, run the following:
@@ -96,5 +96,4 @@ Thank you for contributing!
 ## Attribution
 
 This Contributing Guide is adapted from the React Redux Contributing Guide
-available at
-https://github.com/reduxjs/react-redux/blob/master/CONTRIBUTING.md.
+available at https://github.com/reduxjs/react-redux/blob/master/CONTRIBUTING.md.
