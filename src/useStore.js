@@ -11,6 +11,7 @@ const useStore = (actionsOrReducer, initialState) => {
       const reducerActionResult = reducerAction(
         state,
         action.payload,
+        action.dispatch,
         action.type,
       )
 
