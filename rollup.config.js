@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import replace from 'rollup-plugin-replace'
+import visualizer from 'rollup-plugin-visualizer'
 import { terser } from 'rollup-plugin-terser'
 
 import packageDefinition from './package.json'
@@ -19,6 +20,7 @@ const config = {
     },
   },
   plugins: [
+    visualizer({ filename: 'stats/index.html' }),
     nodeResolve(),
     babel({
       exclude: '**/node_modules/**',
