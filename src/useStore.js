@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useReducer } from 'react'
 
-const useStore = (actionsOrReducer, initialState) => {
+export default function useStore(actionsOrReducer, initialState) {
   const reducer = useCallback(
     (state, action) => {
       if (typeof actionsOrReducer === 'function') {
@@ -42,16 +42,13 @@ const useStore = (actionsOrReducer, initialState) => {
     )
   }, [dispatch, actionsOrReducer])
 
-  const store = useMemo(
-    () => ({
+  const store = useMemo(() => {
+    return {
       ...dispatchers,
       ...state,
       dispatch,
-    }),
-    [dispatch, dispatchers, state],
-  )
+    }
+  }, [dispatch, dispatchers, state])
 
   return store
 }
-
-export default useStore
