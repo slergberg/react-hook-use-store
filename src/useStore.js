@@ -34,7 +34,7 @@ export function useStore(actions, initialState, storeExtension = {}) {
 
   const storeActions = useMemo(() => {
     const {
-      _builder: storeExtensionBuilder,
+      _builder: storeExtensionBuilder = {},
     } = builderRef.current.storeExtension
 
     return {
@@ -45,7 +45,7 @@ export function useStore(actions, initialState, storeExtension = {}) {
 
   const storeInitialState = useMemo(() => {
     const {
-      _builder: storeExtensionBuilder,
+      _builder: storeExtensionBuilder = {},
     } = builderRef.current.storeExtension
 
     return {
