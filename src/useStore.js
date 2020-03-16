@@ -26,46 +26,34 @@ export function useActionsReducer(actions, initialState) {
 }
 
 export function useStore(actions, initialState, storeExtension = {}) {
+  const { _builder: storeExtensionBuilder = {} } = storeExtension
+
   const builderRef = useRef({
-    actions,
-    initialState,
-    storeExtension,
+    actions: {
+      ...(storeExtensionBuilder.actions || {}),
+      ...actions,
+    },
+    initialState: {
+      ...(storeExtensionBuilder.initialState || {}),
+      ...initialState,
+    },
   })
 
-  const storeActions = useMemo(() => {
-    const {
-      _builder: storeExtensionBuilder = {},
-    } = builderRef.current.storeExtension
-
-    return {
-      ...(storeExtensionBuilder.actions || {}),
-      ...builderRef.current.actions,
-    }
-  }, [builderRef])
-
-  const storeInitialState = useMemo(() => {
-    const {
-      _builder: storeExtensionBuilder = {},
-    } = builderRef.current.storeExtension
-
-    return {
-      ...(storeExtensionBuilder.initialState || {}),
-      ...builderRef.current.initialState,
-    }
-  }, [builderRef])
-
-  const [state, dispatch] = useActionsReducer(storeActions, storeInitialState)
+  const [state, dispatch] = useActionsReducer(
+    builderRef.current.actions,
+    builderRef.current.initialState,
+  )
 
   const dispatchers = useMemo(
     () =>
-      Object.keys(storeActions).reduce(
+      Object.keys(builderRef.current.actions).reduce(
         (accumulator, type) => ({
           ...accumulator,
           [type]: (payload) => dispatch({ dispatch, payload, type }),
         }),
         {},
       ),
-    [dispatch, storeActions],
+    [dispatch, builderRef.current.actions],
   )
 
   const store = useMemo(
